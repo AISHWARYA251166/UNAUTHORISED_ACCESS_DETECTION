@@ -10,22 +10,25 @@ Next, the system prompts the user to enter a username and password. The entered 
 
 During this process, the system monitors and handles different scenarios:
 
-If the user enters the correct password on the first or second attempt, and the face detected matches the expected user, the login is marked as successful. No email is sent, and access is granted.
+    If the user enters the correct password on the first or second attempt, and the face detected matches the expected user, the login is marked as successful. No 
+    email is sent, and access is granted.
 
-If the correct password is entered, but the captured face does not match the expected user (i.e., someone else is logging in), the system flags it as suspicious. Although the login succeeds, an email alert is sent to the owner’s registered email with the captured image and location, notifying them of a possible unauthorized login.
+    If the correct password is entered, but the captured face does not match the expected user (i.e., someone else is logging in), the system flags it as 
+    suspicious. Although the login succeeds, an email alert is sent to the owner’s registered email with the captured image and location, notifying them of a 
+    possible unauthorized login.
 
-If the password is entered incorrectly three times, the system checks the captured face:
+    If the password is entered incorrectly three times, the system checks the captured face:
 
-If the face matches the owner's face, it assumes the real user simply forgot their password. In this case, the system sends an email with a password reset link to the registered email.
+    If the face matches the owner's face, it assumes the real user simply forgot their password. In this case, the system sends an email with a password reset 
+    link to the registered email.
 
-If the face does not match the owner's face, it is treated as an unauthorized access attempt. The system sends a warning email with the captured image and location to alert the owner about the intrusion.
+    If the face does not match the owner's face, it is treated as an unauthorized access attempt. The system sends a warning email with the captured image and 
+    location to alert the owner about the intrusion.
 
 Each email includes:
 
 The number of failed login attempts
-
 The time of the access attempt
-
 The location of the user
 
 A captured image of the person attempting access (if unauthorized)
